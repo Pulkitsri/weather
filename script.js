@@ -26,6 +26,7 @@ const getWeather =(city)=>{
             wind_degrees.innerHTML = response.wind_degrees;
             sunrise.innerHTML = response.sunrise;
             sunset.innerHTML = response.sunset;  
+            
         })
     }
     catch (error) {
@@ -36,9 +37,13 @@ const getWeather =(city)=>{
 
 submit.addEventListener("click",(e)=>{
     e.preventDefault();
+    
     getWeather(city.value);
+    document.getElementById("city").value = "";
+
 })
 
 getWeather("Delhi");
+
 
 
